@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+import HomeScreen from './components/screens/HomeScreen'
+import { ResultSearchScreen } from './components/screens/ResultSearchScreen'
+import { Route, Routes } from 'react-router-dom'
+import { NavBar } from './components/shared/NavBar'
+import { DetailProductScreen } from './components/screens/DetailProductScreen'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="items?search=hola" element={<ResultSearchScreen />} />
+        <Route path="items/:id" element={<DetailProductScreen />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
