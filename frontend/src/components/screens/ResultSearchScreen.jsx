@@ -1,6 +1,9 @@
+import ProductCard from '../shared/ProductCard'
 
 export const ResultSearchScreen = () => {
   return (
-    <div>ResultSearchScreen</div>
+    <div className="whiteBox">
+      <ProductCard />
+    </div>
   )
 }

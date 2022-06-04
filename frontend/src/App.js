@@ -13,8 +13,8 @@ function App() {
         <Breadcrumb />
         <Routes>
           <Route path="/" element={<HomeScreen />} />
-          <Route path="items?search=hola" element={<ResultSearchScreen />} />
-          <Route path="items/:id" element={<DetailProductScreen />} />
+          <Route path="results" element={<ResultSearchScreen />} />
+          <Route path="items" element={<DetailProductScreen />} />
         </Routes>
       </div>
     </div>

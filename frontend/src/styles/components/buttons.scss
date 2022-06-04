@@ -1,0 +1,27 @@
+.btn {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 23px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--grayDark);
+  background-color: transparent;
+  text-decoration: none;
+  border: 1px solid var(--grayDark);
+  outline: unset;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &-primary {
+    @extend .btn;
+    color: var(--white);
+    background-color: var(--brandBlue);
+    border-color: var(--brandBlue);
+    &:hover {
+      background-color: var(--white);
+      color: var(--brandBlue);
+    }
+  }
+}

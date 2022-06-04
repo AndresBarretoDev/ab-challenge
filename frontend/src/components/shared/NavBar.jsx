@@ -1,13 +1,14 @@
-import logo from '../../assets/Logo_ML.png'
-import searchIcon from '../../assets/ic_Search2x.png'
+import logo from '../../assets/images/Logo_ML.png'
+import searchIcon from '../../assets/images/ic_Search2x.png'
+import { Link } from 'react-router-dom'
 
 export const NavBar = () => {
   return (
     <header className="header">
       <div className="header__content">
-        <div className="header__logo">
+        <Link to="/" className="header__logo">
           <img src={logo} alt="logo" className="image-contain" />
-        </div>
+        </Link>
         <div className="finder">
           <input
             className="finder__input"
