@@ -1,0 +1,84 @@
+:root {
+  --white: #ffffff;
+  --brandYellow: #ffe600;
+  --brandBlue: #3483fa;
+  --grayDarkest: #333333;
+  --grayDark: #666666;
+  --grayLight: #999999;
+  --grayLightest: #eeeeee;
+}
+
+html,
+body,
+body *,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+  // font-family: 'Montserrat-SemiBold', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--grayLightest);
+  color: var(--grayDark);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+input {
+  border: unset;
+  background: transparent;
+  font-family: inherit;
+  color: inherit;
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none;
+}
+
+// shared styles for all components
+.contentBox {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  &-contain {
+    @extend .image;
+    object-fit: contain;
+  }
+  &-cover {
+    @extend .image;
+    object-fit: cover;
+  }
+}

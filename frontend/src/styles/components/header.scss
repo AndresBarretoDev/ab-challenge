@@ -1,0 +1,18 @@
+.header {
+  width: 100%;
+  background: var(--brandYellow);
+  padding: 10px 16px;
+  &__content {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__logo {
+    width: 53px;
+    height: 36px;
+    margin-right: 20px;
+  }
+}
