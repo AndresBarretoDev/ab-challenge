@@ -7,11 +7,10 @@
 */
 
 const { Router } = require('express')
+const { getSearchResults } = require('../controllers/searchProductController')
 const router = Router()
 
-/* GET users listing. */
-router.get('/', (req, res, next) => {
-  res.json({ ok: true, message: 'reloaded' })
-})
+/* GET  search results listing. */
+router.get('/', getSearchResults)
 
 module.exports = router

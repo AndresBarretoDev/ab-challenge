@@ -1,26 +1,29 @@
-let createError = require('http-errors')
-let express = require('express')
-let path = require('path')
-let cookieParser = require('cookie-parser')
-let logger = require('morgan')
+const createError = require('http-errors')
+const express = require('express')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const logger = require('morgan')
 
-let indexRouter = require('./routes/index')
-let resultsRouter = require('./routes/results')
+const indexRouter = require('./routes/index')
+const searchRouter = require('./routes/searchResults')
 
-let app = express()
+const app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 
 app.use(logger('dev'))
+// read and parse the request body
 app.use(express.json())
+
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
-app.use('/items', resultsRouter)
+app.use('/items', searchRouter)
+app.use('/items:id', searchRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
