@@ -47,6 +47,9 @@ const ProductCard = ({ typeCard, buyButton }) => {
   )
 }
 
-ProductCard.propTypes = {}
+ProductCard.propTypes = {
+  typeCard: PropTypes.string,
+  buyButton: PropTypes.element,
+}
 
 export default ProductCard

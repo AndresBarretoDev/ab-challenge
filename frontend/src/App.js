@@ -1,24 +1,7 @@
-import HomeScreen from './components/screens/HomeScreen'
-import { ResultSearchScreen } from './components/screens/ResultSearchScreen'
-import { Route, Routes } from 'react-router-dom'
-import { NavBar } from './components/shared/NavBar'
-import { DetailProductScreen } from './components/screens/DetailProductScreen'
-import { Breadcrumb } from './components/shared/Breadcrumb'
+import { AppRouter } from './routers/AppRouter'
 
 function App() {
-  return (
-    <div className="App">
-      <NavBar />
-      <div className="contentBox">
-        <Breadcrumb />
-        <Routes>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="results" element={<ResultSearchScreen />} />
-          <Route path="items" element={<DetailProductScreen />} />
-        </Routes>
-      </div>
-    </div>
-  )
+  return <AppRouter />
 }
 
 export default App
