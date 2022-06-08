@@ -1,3 +1,17 @@
 .breadCrumb {
   margin: 16px 0;
+  &__item {
+    display: inline-block;
+    color: var(--grayLight);
+    cursor: pointer;
+    font-size: 14px;
+    &:not(:last-child) {
+      margin-right: 10px;
+      &::after {
+        content: '›';
+        margin-left: 10px;
+        font-size: 18px;
+      }
+    }
+  }
 }
