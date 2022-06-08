@@ -44,7 +44,7 @@ const getDetailProducts = (req, res, next) => {
         author,
         item: itemData,
       }
-      console.log('response final', detailProduct)
+      // console.log('response final', detailProduct)
 
       res.json(dataResponse)
     })

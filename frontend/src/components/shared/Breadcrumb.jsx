@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export const Breadcrumb = ({ breadItems }) => {
-  console.log('props', breadItems)
   return (
     <div className="breadCrumb">
-      {breadItems.map((item, index) => (
-        <div key={`${item.name}gfdfg`} className="breadCrumb__item">
-          <span href="/">{item.name}</span>
-        </div>
-      ))}
+      {breadItems.length > 0
+        ? breadItems.map((item, index) => (
+            <div key={index} className="breadCrumb__item">
+              <span>{item.name}</span>
+            </div>
+          ))
+        : null}
     </div>
   )
 }

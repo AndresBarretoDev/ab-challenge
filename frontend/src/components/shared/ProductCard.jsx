@@ -13,6 +13,7 @@ const ProductCard = ({ typeCard, buyButton, product }) => {
     picture,
     city,
     description,
+    sold_quantity,
   } = product
   return (
     <>
@@ -48,7 +49,12 @@ const ProductCard = ({ typeCard, buyButton, product }) => {
                 ) : null}
               </div>
               <h2 className="productCard__name">{title}</h2>
-              <p className="productCard__status">{condition}</p>
+              <p className="productCard__status">
+                {condition}
+                {sold_quantity ? (
+                  <span> - {sold_quantity} vendidos</span>
+                ) : null}
+              </p>
             </div>
             {city ?? <p className="productCard__location">{city}</p>}
           </div>

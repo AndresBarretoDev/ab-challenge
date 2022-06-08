@@ -1,13 +1,10 @@
 import logo from '../../assets/images/Logo_ML.png'
 import searchIcon from '../../assets/images/ic_Search2x.png'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
-// import queryString from 'query-string'
 
 export const NavBar = () => {
   const navigate = useNavigate()
-  const location = useLocation()
-  // const querySearch = queryString.parse(location.search)
 
   const [formValues, handleInputChange, resetForm] = useForm({
     search: '',

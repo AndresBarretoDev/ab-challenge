@@ -59,11 +59,16 @@
         padding: 0;
         border-bottom: none;
         align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
       &__image {
         width: 100%;
         max-width: 680px;
         height: 680px;
+      }
+      &__info {
+        flex: 0 1 32%;
       }
       &__content {
         display: flex;
@@ -73,7 +78,9 @@
         padding-top: 32px;
       }
       &__button {
-        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        padding-right: 32px;
       }
       &__price {
         font-weight: 600;

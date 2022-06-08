@@ -12,25 +12,20 @@ export const DetailProductScreen = () => {
   const { id } = params
 
   useEffect(() => {
-    getDetailProduct()
-  }, [])
-
-  const getDetailProduct = async () => {
-    try {
-      const response = await fetch(`/items/${id}`)
-      const data = await response.json()
-      console.log('data', data)
-      if (data.ok) {
-        setDetailProduct(data.item)
-        setLoading(false)
+    const getDetailProduct = async () => {
+      try {
+        const response = await fetch(`/items/${id}`)
+        const data = await response.json()
+        if (data.ok) {
+          setDetailProduct(data.item)
+          setLoading(false)
+        }
+      } catch (error) {
+        setDetailProduct({})
       }
-      // return data
-    } catch (error) {
-      setDetailProduct({})
     }
-  }
-
-  // console.log('detailProduct', detailProduct)
+    getDetailProduct()
+  }, [id])
 
   return (
     <div className="whiteBox">
@@ -40,7 +35,7 @@ export const DetailProductScreen = () => {
         <ProductCard
           typeCard="detail"
           product={detailProduct}
-          buyButton={<Button color="primary" text="comprar" />}
+          buyButton={<Button color="primary" text="Comprar" />}
         />
       )}
     </div>

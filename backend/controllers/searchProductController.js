@@ -11,7 +11,7 @@ const getSearchResults = async (req, res, next) => {
   const { search } = req.query
   const endpoint = `${URL_API}${search}`
 
-  await fetch(endpoint)
+  fetch(endpoint)
     .then((res) => res.json())
     .then(({ results }) => {
       const listCategoryId = results.map((item) => item.category_id)
@@ -33,7 +33,6 @@ const getSearchResults = async (req, res, next) => {
         return itemData
       })
       Promise.all([cats]).then((categories) => {
-        console.log('categorie', ...categories)
         const dataResponse = {
           ok: true,
           author,
@@ -42,37 +41,6 @@ const getSearchResults = async (req, res, next) => {
         }
         res.json(dataResponse)
       })
-      // const items = results.map((item) => {
-      //   const {
-      //     id,
-      //     title,
-      //     prices,
-      //     condition,
-      //     thumbnail: picture,
-      //     shipping,
-      //   } = item
-      //   const itemData = {
-      //     id,
-      //     title,
-      //     condition,
-      //     picture,
-      //     free_shipping: shipping.free_shipping,
-      //     price: {
-      //       id: prices.id,
-      //       currency: prices.prices[0].currency_id,
-      //       amount: prices.prices[0].amount,
-      //       decimals: 0,
-      //     },
-      //   }
-      //   return itemData
-      // })
-      // const dataResponse = {
-      //   ok: true,
-      //   author,
-      //   items,
-      //   categories: cats,
-      // }
-      // res.json(dataResponse)
     })
     .catch((err) => {
       res.send(err)
@@ -102,7 +70,6 @@ const getBreadCrumb = async (catId) => {
   try {
     const response = await fetch(apiCategories)
     const { path_from_root } = await response.json()
-    // console.log('path_from_root', path_from_root)
     return path_from_root
   } catch (error) {}
 }

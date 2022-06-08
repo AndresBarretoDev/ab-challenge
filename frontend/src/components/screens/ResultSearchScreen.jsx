@@ -12,8 +12,8 @@ export const ResultSearchScreen = () => {
     fetch(search)
       .then((response) => response.json())
       .then((data) => {
-        setBreadCrumb(data.categories)
         const getItems = data.items.filter((item, index) => index <= 3 ?? item)
+        setBreadCrumb(data.categories)
         setProducts(getItems)
       })
       .catch((error) => {
@@ -22,11 +22,10 @@ export const ResultSearchScreen = () => {
       })
   }, [search])
 
-  console.log('breadCrumb', breadCrumb)
-
   return (
     <>
-      {breadCrumb.length > 0 ? <Breadcrumb breadItems={breadCrumb} /> : null}
+      <Breadcrumb breadItems={breadCrumb} />
+
       <div className="whiteBox">
         {products && products.length > 0 ? (
           products.map((product) => (
