@@ -5,6 +5,10 @@ import { HomeScreen } from '../components/screens/HomeScreen'
 import { DetailProductScreen } from '../components/screens/DetailProductScreen'
 import { ResultSearchScreen } from '../components/screens/ResultSearchScreen'
 
+/**
+ * para crear el router de la aplicación  se utilizó react-router-dom V6
+ */
+
 export const AppRouter = () => {
   return (
     <BrowserRouter>

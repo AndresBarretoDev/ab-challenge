@@ -4,13 +4,20 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 
 export const NavBar = () => {
+  /** se importa el hook useNavigate para poder navegar a la lista de productos
+   * https://reactrouter.com/docs/en/v6/hooks/use-navigate */
   const navigate = useNavigate()
 
+  /** se importa un customhook llamado useForm para poder
+   * manejar el formulario de búsqueda */
   const [formValues, handleInputChange, resetForm] = useForm({
+    /** se define el valor inicial del formulario */
     search: '',
   })
   const { search } = formValues
 
+  /** se define un método para manejar el evento onSubmit del formulario
+   * y navegar a la lista de productos con el valor de la búsqueda */
   const handleSearch = (e) => {
     e.preventDefault()
     navigate(`/items?search=${search}`)

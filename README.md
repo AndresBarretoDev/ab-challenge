@@ -2,14 +2,27 @@
 
 Este proyecto fue creado con [Create React App] --express template (https://github.com/facebook/create-react-app).
 
-## Technologies used
+se divide en dos carpetas principales backend (configuración de express, peticiones), frontend (configuración de la aplicación react y componentes visuales)
 
-React: 18.1.0,
+## Algunas tecnologias usadas
+
+React: 18.1.0
+
 React-dom: 18.1.0"
+
 React-router-dom: 6.3.0
+
 express: ^4.16.4
+
 node-fetch:^2.6.7
+
 node-sass: ^7.0.1
+
+## Inicio
+
+### `npm install`
+
+Descargar todas las dependencias requeridas
 
 ## Available Scripts
 

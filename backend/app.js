@@ -22,6 +22,10 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
+/** llamado de las rutas configuradas, se hace uso de una carpeta
+ * controllers para centralizar la configuración de la petición
+ */
+
 app.use('/', indexRouter)
 app.use('/items', searchRouter)
 app.use('/items/:id', detailRouter)

@@ -3,6 +3,13 @@ import PropTypes from 'prop-types'
 
 import iconShipping from '../../assets/images/ic_shipping.png'
 import { Link } from 'react-router-dom'
+
+/** Este componente recibe tres parámetros:
+ * typecard: string que define el tipo de tarjeta, en este caso (detail) 
+  para mostrar los estilos correspondientes en el detalle del producto.
+  * buyButton: recibe el componente Button, y que define si se muestra el botón de compra o no.
+  * product: objeto que contiene los datos del producto.
+ */
 const ProductCard = ({ typeCard, buyButton, product }) => {
   const {
     id,
@@ -24,7 +31,7 @@ const ProductCard = ({ typeCard, buyButton, product }) => {
           <div className="productCard__image">
             {/* TODO: componente imagen  */}
             <Link to={`/items/${id}`}>
-              <img src={picture} alt="imagen" className="image-contain" />
+              <img src={picture} alt={title} className="image-contain" />
             </Link>
           </div>
           <div className="productCard__info">
